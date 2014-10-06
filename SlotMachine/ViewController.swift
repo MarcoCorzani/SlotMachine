@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     let kMarginForView: CGFloat = 10.0    // 10 Punkte
     let kMarginForSlot: CGFloat = 2
         // Konstante für Höhe
-    let kSixth:CGFloat = 1.0 / 6.0           // En Sechstel
+    let kSixth:CGFloat = 1.0 / 6.0           // Ein Sechstel
     let kThird:CGFloat = 1.0 / 3.0
     
     
@@ -44,6 +44,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     
         //Hier werden die unten erstellten Funktionen aufgerufen
+        //Testkommentar für Stefan
         
         setupContainerViews()
         
