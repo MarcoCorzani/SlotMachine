@@ -74,7 +74,8 @@ class ViewController: UIViewController {
         self.secondContainer.backgroundColor = UIColor.blackColor()
         self.view.addSubview(self.secondContainer)
         
-        self.thirdContainer = UIView(frame: CGRectMake(self.view.bounds.origin.x + kMarginForView, self.firstContainer.frame.height + secondContainer.frame.height, self.view.bounds.width - (kMarginForView * 2), self.view.bounds.height * kSixth))
+        self.thirdContainer = UIView(frame: CGRectMake(self.view.bounds.origin.x + kMarginForView, self.firstContainer.frame.height + self.secondContainer.frame.height, self.view.bounds.width - (kMarginForView * 2),
+            self.view.bounds.height * kSixth))
         self.thirdContainer.backgroundColor = UIColor.lightGrayColor()
         self.view.addSubview(self.thirdContainer)
     
@@ -97,14 +98,15 @@ class ViewController: UIViewController {
         
         containerView.addSubview(self.titleLabel)
     }
-        // Jetzt auf den Zweiten (Von oben)
+        // Jetzt auf den Zweiten (Von oben) die 9 gelben Quadrate
     
     func setupSecondContainer(containerView: UIView) {
         
-        for var columNumber = 0; columNumber < knumberOfColums; ++columNumber {
-            for var rowNumber = 0; rowNumber < knumberOfRows; ++rowNumber {
-                var slotImageView = UIImageView()
-                slotImageView.backgroundColor = UIColor.yellowColor()
+        for var columNumber = 0; columNumber < knumberOfColums; ++columNumber {     // knumberOfColums ist 3, also zählt er 0,1,2 also 3 x
+            for var rowNumber = 0; rowNumber < knumberOfRows; ++rowNumber {         // knumberOfRows   ist 3, also zählt er 0,1,2 also 3 x
+                var slotImageView = UIImageView()                                   // Variable "slotImageView" soll ein UIImageView sein, also Platzhalter für ein Image
+                slotImageView.backgroundColor = UIColor.yellowColor()               // "slotImageView" bekommt die Hintergrundfarbe "Gelb"
+                
                 slotImageView.frame = CGRectMake(containerView.bounds.origin.x + (containerView.bounds.size.width * CGFloat(columNumber) * kThird), containerView.bounds.origin.y + (containerView.bounds.size.height * CGFloat(rowNumber) * kThird), containerView.bounds.width * kThird - kMarginForSlot, containerView.bounds.height * kThird - kMarginForSlot)
                 containerView.addSubview(slotImageView)
             }
